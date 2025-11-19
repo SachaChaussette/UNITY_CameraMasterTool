@@ -62,6 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\Tool\QuickSwitcher\Editor\QuickSwitcherWindow.cs" />
+    <Compile Include="Assets\Tool\QuickSwitcher\Editor\CameraFinder.cs" />
+    <Compile Include="Assets\Tool\CameraMaster\Editor\CameraMasterWindow.cs" />
+    <Compile Include="Assets\Tool\FOVEditor\Editor\FOVEditorWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
