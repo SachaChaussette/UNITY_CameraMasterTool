@@ -17,7 +17,7 @@ public class QuickSwitcherWindow : EditorWindow
 
     bool IsValid => allCameras.Count > 0 && allCameras.Count == size;
 
-    [MenuItem("Tools/Quick Switcher")]
+    [MenuItem("Tools/Quick Switcher", false, 11)]
     public static void OpenWindow()
     {
         QuickSwitcherWindow _window = GetWindow<QuickSwitcherWindow>();

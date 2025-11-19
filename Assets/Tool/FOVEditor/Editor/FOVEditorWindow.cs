@@ -8,7 +8,7 @@ public class FOVEditorWindow : EditorWindow
 
     public const string WINDOW_TITLE = "FOV Editor";
 
-    [MenuItem("Tools/Fov Editor")]
+    [MenuItem("Tools/Fov Editor", false, 12)]
     public static void OpenWindow()
     {
         FOVEditorWindow _window = GetWindow<FOVEditorWindow>();
@@ -38,9 +38,10 @@ public class FOVEditorWindow : EditorWindow
             string _currentSceneName = SceneManager.GetActiveScene().name;
             EditorGUILayout.HelpBox(new GUIContent($"Selected Camera"));
             EditorGUILayout.Separator();
-            EditorGUILayout.ObjectField(selectedCamera, typeof(Camera), false);
+            EditorGUILayout.ObjectField(selectedCamera, typeof(Camera), true);
             if (selectedCamera)
             {
+                EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
                 EditorGUILayout.Separator();
                 selectedCamera.fieldOfView = EditorGUILayout.Slider(new GUIContent("Field Of View"), selectedCamera.fieldOfView, 0.0f, 180.0f);
                 EditorGUILayout.Separator();
@@ -62,8 +63,7 @@ public class FOVEditorWindow : EditorWindow
 
     void RefreshCurrentCamera()
     {
-        GameObject _activeGameObject = Selection.activeGameObject;
-        selectedCamera = _activeGameObject ? _activeGameObject.GetComponent<Camera>() : null;
+        selectedCamera = CameraFinder.GetCurrentSelectedCamera();
         Repaint();
     }
 }
