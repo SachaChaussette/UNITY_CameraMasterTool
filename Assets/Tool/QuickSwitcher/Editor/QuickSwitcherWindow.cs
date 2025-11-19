@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class QuickSwitcherWindow : EditorWindow
 {
-    const string WINDOW_TITLE = "Quick Switcher",
-                 MAIN_TITLE = "Camera Viewer";
+    public const string WINDOW_TITLE = "Quick Switcher";
 
     List<Camera> allCameras = new List<Camera>();
     List<Camera> camerasToDelete = new List<Camera>();
@@ -18,7 +17,7 @@ public class QuickSwitcherWindow : EditorWindow
 
     bool IsValid => allCameras.Count > 0 && allCameras.Count == size;
 
-    [MenuItem("Tools/Camera Master Tool")]
+    [MenuItem("Tools/Quick Switcher")]
     public static void OpenWindow()
     {
         QuickSwitcherWindow _window = GetWindow<QuickSwitcherWindow>();
@@ -40,6 +39,8 @@ public class QuickSwitcherWindow : EditorWindow
     private void OnGUI()
     {
         DrawCamerasList();
+
+        Repaint();
     }
 
     void DrawCamerasList() 

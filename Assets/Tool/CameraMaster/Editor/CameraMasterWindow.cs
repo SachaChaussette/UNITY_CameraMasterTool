@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class CameraMasterWindow : EditorWindow
 {
-    const string WINDOW_TITLE = "Camera Master";
-
+    [MenuItem("Tools/Camera Master Tool")]
+    public static void OpenWindow()
+    {
+        QuickSwitcherWindow _quickSwictcherWindow = GetWindow<QuickSwitcherWindow>(QuickSwitcherWindow.WINDOW_TITLE, false);
+        FOVEditorWindow _fovEditorWindow = GetWindow<FOVEditorWindow>(FOVEditorWindow.WINDOW_TITLE, false, typeof(QuickSwitcherWindow));
+        _quickSwictcherWindow.Show();
+    }
 }
