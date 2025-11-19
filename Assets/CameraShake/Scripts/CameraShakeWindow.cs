@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class CameraShakeWindow : EditorWindow
 {
-    const string WINDOW_TITLE = "Manager Shake";
+    public const string WINDOW_TITLE = "Manager Shake";
     const string TARGET_CAMERA_TO_CHOOSE = "Choose camera";
     const string CHOOSE_PRESET = "Choose preset (Optional)";
     const string DURATION_SHAKE = "Choose duration for shake";
@@ -36,23 +36,26 @@ public class CameraShakeWindow : EditorWindow
         choosenPreset = (CameraShakePreset)EditorGUILayout.ObjectField(CHOOSE_PRESET, choosenPreset, typeof(CameraShakePreset), true);
         EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.BeginVertical("Box");
-        EditorGUILayout.LabelField("Create preset");
-        EditorGUILayout.BeginHorizontal();
-        EditorGUIUtility.labelWidth = 250f;
-        duration = EditorGUILayout.FloatField(DURATION_SHAKE, duration);
-        EditorGUILayout.EndHorizontal();
+        if(!choosenPreset)
+        {
+            EditorGUILayout.BeginVertical("Box");
+            EditorGUILayout.LabelField("Create preset");
+            EditorGUILayout.BeginHorizontal();
+            EditorGUIUtility.labelWidth = 250f;
+            duration = EditorGUILayout.FloatField(DURATION_SHAKE, duration);
+            EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.BeginHorizontal();
-        EditorGUIUtility.labelWidth = 250f;
-        magnitude = EditorGUILayout.FloatField(MAGNITUDE_SHAKE, magnitude);
-        EditorGUILayout.EndHorizontal();
+            EditorGUILayout.BeginHorizontal();
+            EditorGUIUtility.labelWidth = 250f;
+            magnitude = EditorGUILayout.FloatField(MAGNITUDE_SHAKE, magnitude);
+            EditorGUILayout.EndHorizontal();
 
-        EditorGUILayout.BeginHorizontal();
-        EditorGUIUtility.labelWidth = 250f;
-        presetName = EditorGUILayout.TextField(PRESET_NAME, presetName);
-        EditorGUILayout.EndHorizontal();
-        EditorGUILayout.EndVertical();
+            EditorGUILayout.BeginHorizontal();
+            EditorGUIUtility.labelWidth = 250f;
+            presetName = EditorGUILayout.TextField(PRESET_NAME, presetName);
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.EndVertical();
+        }
 
         if (GUILayout.Button("Test shake"))
         {

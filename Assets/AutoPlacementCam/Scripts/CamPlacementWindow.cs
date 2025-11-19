@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 public class CamPlacementWindow : EditorWindow
 {
-    const string WINDOW_TITLE = "Auto Camera Placement";
+    public const string WINDOW_TITLE = "Auto Camera Placement";
     string CAMERA_TO_PLACE_TITLE = "Enter number of cam to spawn";
     string CAMERA_OFFSET_TITLE = "Enter offset camera to spawn";
     string TARGET_TO_CHOOSE = "Choose a target to spawn camera arround";
