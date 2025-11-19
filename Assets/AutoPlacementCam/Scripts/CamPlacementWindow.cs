@@ -40,7 +40,7 @@ public class CamPlacementWindow : EditorWindow
 
         EditorGUILayout.BeginHorizontal();
         EditorGUIUtility.labelWidth = 250f;
-        target = (GameObject)EditorGUILayout.ObjectField(TARGET_TO_CHOOSE, target, typeof(GameObject), true);
+        target = (GameObject)EditorGUILayout.ObjectField(TARGET_TO_CHOOSE, target, typeof(Camera), true);
         EditorGUILayout.EndHorizontal();
 
         if (GUILayout.Button("Place camera arround target"))
