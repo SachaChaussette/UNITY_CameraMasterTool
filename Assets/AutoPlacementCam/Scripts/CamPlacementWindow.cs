@@ -12,7 +12,7 @@ public class CamPlacementWindow : EditorWindow
     Vector3 offSetCam = Vector3.zero;
     GameObject target = null;
 
-    [MenuItem("Cams/Auto Camera Placement")]
+    [MenuItem("Tools/Auto Camera Placement", false, 11)]
     public static void OpenWindow()
     {
         CamPlacementWindow _window = GetWindow<CamPlacementWindow>();

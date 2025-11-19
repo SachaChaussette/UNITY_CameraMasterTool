@@ -17,7 +17,7 @@ public class CameraShakeWindow : EditorWindow
     CameraShakePreset choosenPreset = null;
     string presetName = "DefaultNamePreset";
 
-    [MenuItem("Cams/Camera shake")]
+    [MenuItem("Tools/Camera Shake", false, 14)]
     public static void OpenWindow()
     {
         CameraShakeWindow _window = GetWindow<CameraShakeWindow>();
