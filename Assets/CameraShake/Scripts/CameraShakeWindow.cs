@@ -13,7 +13,7 @@ public class CameraShakeWindow : EditorWindow
     const string PRESET_NAME = "Choose preset name";
     float duration = 1f;
     float magnitude = 1f;
-    GameObject camera = null;
+    Camera camera = null;
     CameraShakePreset choosenPreset = null;
     string presetName = "DefaultNamePreset";
 
@@ -28,7 +28,7 @@ public class CameraShakeWindow : EditorWindow
     {
         EditorGUILayout.BeginHorizontal();
         EditorGUIUtility.labelWidth = 250f;
-        camera = (GameObject)EditorGUILayout.ObjectField(TARGET_CAMERA_TO_CHOOSE, camera, typeof(GameObject), true);
+        camera = (Camera)EditorGUILayout.ObjectField(TARGET_CAMERA_TO_CHOOSE, camera, typeof(Camera), true);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();

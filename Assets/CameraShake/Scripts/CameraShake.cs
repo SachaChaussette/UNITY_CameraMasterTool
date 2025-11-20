@@ -12,7 +12,7 @@ public class CameraShake : MonoBehaviour
     static Vector3 initialPosition = Vector3.zero;
     static float duration = 3.0f;
     static float magnitude = 1.0f;
-    static GameObject targetCamera = null;
+    static Camera targetCamera = null;
     static double startTime = 0.0;
 
 
@@ -30,7 +30,7 @@ public class CameraShake : MonoBehaviour
         AssetDatabase.Refresh();
     }
 
-    public static void TestShake(GameObject _targetCamera, float _duration, float _magnitude)
+    public static void TestShake(Camera _targetCamera, float _duration, float _magnitude)
     {
         if (_targetCamera == null) return;
         if(isShaking) StopShake();
